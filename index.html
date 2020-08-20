@@ -23,14 +23,37 @@
         QRCode Badge Generator
       </h1>
     </header>
-    <main class="container-fluid justify-content-center">
-      <div id="data-box-container" class="mx-5 row justify-content-center">
+    <main class="container-fluid">
+      <div id="data-box-container" class="container justify-content-center">
         <div
           style="display: none;"
           id="result"
-          class="container justify-content-between row p-5"
-        ></div>
-        <form id="data-entry" class="container justify-content-between row p-5">
+          class="row justify-content-center"
+        >
+          <div class="datalabel lead col-12 my-1">
+            Here's your encoded data!
+          </div>
+          <div
+            id="qr-code-display"
+            class="container col-xs-12 col-md-6 -col-lg-6 col-xl-6"
+          ></div>
+          <div
+            id="user-data-display"
+            class="col-xs-12 col-md-6 -col-lg-6 col-xl-6 p-5"
+          ></div>
+          <button
+            type="button"
+            id="addAnew"
+            class="btn btn-outline-dark btn-light col-xs-12 col-md-10 -col-lg-8 col-xl-6 m-2"
+          >
+            Encode again
+          </button>
+        </div>
+
+        <form id="data-entry" class="row justify-content-between row p-5">
+          <div class="datalabel lead col-12 my-1">
+            Enter your data
+          </div>
           <div class="input-group p-3 col-xs-12 col-md-6 -col-lg-6 col-xl-6">
             <div class="input-group-prepend">
               <span class="input-group-text">FirstName</span>
@@ -44,7 +67,7 @@
               <span class="input-group-text">Lastname</span>
             </div>
             <input id="lastname" class="form-control" type="text" />
-            <div id="lastname-error" clas="invalid-feedback"></div>
+            <div id="lastname-error" class="invalid-feedback"></div>
           </div>
 
           <div class="input-group p-3 col-xs-12 col-md-6 -col-lg-6 col-xl-6">
@@ -74,6 +97,7 @@
           <div class="btn-block">
             <button
               type="button"
+              id="cancelButton"
               class="btn btn-outline-dark btn-light m-1 col-xs-12 col-md-5 -col-lg-5 col-xl-5"
             >
               Cancel</button
@@ -89,6 +113,10 @@
       </div>
     </main>
     <footer class="container-fluid my-5 py-5">Designed by Rylox</footer>
+    <script
+      type="text/javascript"
+      src="/modules/node_modules/qrcode-generator/qrcode.js"
+    ></script>
     <script type="module" src="src/main.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"

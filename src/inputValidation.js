@@ -5,7 +5,10 @@ const fieldFact = (
   validFormat,
   validInput,
   formatErrorMessage,
-  inputErrorMessage
+  inputErrorMessage,
+  defaultBackgroundcolor,
+  formatErrorBackgroundColor,
+  inputErrorBackgroundcolor
 ) => {
   if (typeof validFormat === "undefined") validFormat = [];
   if (typeof validInput === "undefined") validInput = [];
@@ -13,9 +16,9 @@ const fieldFact = (
     name: name,
     elem: document.getElementById(fieldId),
     errorElem: document.getElementById(errorFieldId),
-    inputErrorColor: "var(--error-input-input-background-color)",
-    formatErrorColor: "var(--error-input-format-background-color)",
-    initialColor: "var(--input-background-color)",
+    inputErrorColor: inputErrorBackgroundcolor,
+    formatErrorColor: formatErrorBackgroundColor,
+    initialColor: defaultBackgroundcolor,
     validFormat: validFormat,
     validInput: validInput,
     errorMessageFormat: formatErrorMessage,
@@ -24,6 +27,7 @@ const fieldFact = (
       if (this.hasErrElem()) {
         this.errorElem.innerHTML = content;
         this.errorElem.style.visibility = "visible";
+        this.elem.classList.add("is-invalid");
       }
     },
     setBackgroundColor(color) {
@@ -45,6 +49,7 @@ const fieldFact = (
       }
       if (this.hasErrElem()) {
         this.errorElem.style.visibility = "hidden";
+        this.elem.classList.remove("is-invalid");
       }
     },
     resetField() {
@@ -95,17 +100,11 @@ function validateField(field) {
   if (field.isValidFormat()) {
     if (field.isValidInput()) {
       field.resetError();
-      field.elem.classList.remove("is-invalid");
-      field.elem.classList.add("is-valid");
       return true;
     } else {
-      field.elem.classList.remove("is-valid");
-      field.elem.classList.add("is-invalid");
       field.errorInput();
     }
   } else {
-    field.elem.classList.remove("is-valid");
-    field.elem.classList.add("is-invalid");
     field.errorFormat();
   }
   return false;

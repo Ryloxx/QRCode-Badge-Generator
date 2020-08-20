@@ -4,17 +4,8 @@
 body {
   text-align: center;
   flex-direction: column;
-  background: #e0eafc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #cfdef3,
-    #e0eafc
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #cfdef3,
-    #e0eafc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }
 #data-box-container {
   border-radius: 20px;
@@ -22,6 +13,28 @@ body {
   background-color: #fbab7e;
   background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  place-items: center;
+}
+#result {
+  place-items: center;
+}
+#qr-code-display {
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  max-width: min(40%, 300px);
+  padding: 0;
+}
+#qr-code-display img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+#user-data-display li {
+  background: none;
+  text-align: left;
+}
+.datalabel {
+  font-size: max(30px, 2.5vw);
 }
 @keyframes fadeIn {
   0% {
