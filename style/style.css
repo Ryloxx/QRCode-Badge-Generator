@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  flex-direction: column;
+  background-color: aliceblue;
+}
+main {
+  min-height: 85vh;
+}
+#data-entry {
+  border-radius: 20px;
+  background-color: #4158d0;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
