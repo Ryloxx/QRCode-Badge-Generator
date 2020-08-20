@@ -23,11 +23,28 @@
         QRCode Badge Generator
       </h1>
     </header>
-    <main class="container-fluid ">
-      <div
-        id="data-box-container"
-        class="container-fluid row justify-content-center"
-      >
+    <main class="container-fluid justify-content-center">
+      <div id="data-box-container" class="mx-5 row justify-content-center">
+        <div
+          style="display: none;"
+          id="result"
+          class="container justify-content-between row p-5"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed
+          tellus est. Fusce quis nunc in ipsum sodales rutrum. Phasellus
+          elementum neque non est eleifend, id eleifend tortor pulvinar. Aliquam
+          a mauris ac sem sagittis aliquam in id ex. Suspendisse gravida mi
+          purus, non sodales libero posuere at. Ut vitae vulputate ante. Nulla
+          facilisi. Curabitur vulputate nunc ac pharetra ornare. Fusce ornare
+          leo eget dui rhoncus, id mattis nisi commodo. Cras pellentesque id
+          nibh quis sollicitudin. In non mattis quam. Curabitur posuere
+          fermentum lorem, a gravida dolor commodo eu. Nulla fringilla luctus
+          justo. Cras eu lacus auctor, elementum nibh eget, gravida dolor.
+          Vivamus varius interdum diam id posuere. Vivamus at neque nec dolor
+          congue interdum. Nam malesuada orci nulla. Praesent hendrerit
+          vestibulum ante vitae vulputate. Sed pellentesque in nulla ornare
+          faucibus.
+        </div>
         <form id="data-entry" class="container justify-content-between row p-5">
           <div class="input-group p-3 col-xs-12 col-md-6 -col-lg-6 col-xl-6">
             <div class="input-group-prepend">
@@ -74,9 +91,14 @@
           </div>
 
           <div class="btn-block">
-            <button class="btn btn-outline-dark btn-light m-1 col-xs-12 col-md-5 -col-lg-5 col-xl-5">
+            <button
+              type="button"
+              class="btn btn-outline-dark btn-light m-1 col-xs-12 col-md-5 -col-lg-5 col-xl-5"
+            >
               Cancel</button
             ><button
+              type="button"
+              id="submitButton"
               class="btn btn-outline-dark btn-light m-1 col-xs-12 col-md-5 -col-lg-5 col-xl-5"
             >
               Submit
