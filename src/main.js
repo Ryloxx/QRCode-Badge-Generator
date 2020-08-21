@@ -82,7 +82,6 @@ submitButton.addEventListener("click", (event) => {
       userDataList.appendChild(userDataListItem);
       userDataListItem.innerHTML = dataItem;
       stringToEncode += dataItem + "\n";
-      field.resetField();
     });
     //Creating the qrcode
     qr.addData(stringToEncode);
@@ -103,6 +102,9 @@ cancelButton.addEventListener("click", (event) => {
 });
 //Transition back to the data entry phase
 addAgainButton.addEventListener("click", (event) => {
+  fields.forEach((field) => {
+    field.resetField();
+  });
   transition(result, dataEntry, 0.5);
 });
 //Fadein fade out transition animation to swap from the data entry to the results

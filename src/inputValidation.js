@@ -27,6 +27,7 @@ const fieldFact = (
       if (this.hasErrElem()) {
         this.errorElem.innerHTML = content;
         this.errorElem.style.visibility = "visible";
+        this.elem.classList.remove("is-valid");
         this.elem.classList.add("is-invalid");
       }
     },
@@ -56,6 +57,7 @@ const fieldFact = (
       this.resetError();
       if (this.hasInputElem()) {
         this.elem.value = "";
+        this.elem.classList.remove("is-valid");
       }
     },
     testRegexes(value, regexes) {
@@ -86,7 +88,7 @@ const fieldFact = (
     },
   };
 };
-const defaultFormat = /^[0-9a-zA-Z]+$/;
+const defaultFormat = /^[0-9a-zA-Z-éè]+$/;
 const emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 function validateFields(fields) {
@@ -100,6 +102,7 @@ function validateField(field) {
   if (field.isValidFormat()) {
     if (field.isValidInput()) {
       field.resetError();
+      field.elem.classList.add("is-valid");
       return true;
     } else {
       field.errorInput();
