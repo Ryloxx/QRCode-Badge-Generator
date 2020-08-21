@@ -77,6 +77,12 @@ fields.forEach((field) => {
     updateQrButton.disabled = false;
   });
 });
+[fields[3], updateFields["twitter"]].forEach((a) => {
+  a.elem.addEventListener("input", (event) => {
+    addAtBefore(a);
+  });
+});
+
 //Submit button event handler
 submitButton.addEventListener("click", (event) => {
   console.log(updateFields);
@@ -166,4 +172,9 @@ function createString(fields) {
       return res + " :" + a.elem.value;
     })
     .join("\n");
+}
+function addAtBefore(field) {
+  if (field.elem.value && field.elem.value.charAt(0) != "@") {
+    field.elem.value = "@" + field.elem.value;
+  }
 }
